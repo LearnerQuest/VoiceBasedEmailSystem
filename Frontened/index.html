@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoxMail AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="app-shell">
+      <div class="topbar">
+        <div>
+          <h1>VoxMail AI</h1>
+          <p class="subtitle">Voice and text based smart email assistant</p>
+        </div>
+        <div id="backendStatus" class="status-pill">Backend: Checking...</div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Input</h2>
+            <p>Choose how you want to create your email</p>
+          </div>
+
+          <div class="mode-switch">
+            <button id="voiceTabBtn" class="mode-btn active" type="button">Voice</button>
+            <button id="textTabBtn" class="mode-btn" type="button">Text</button>
+          </div>
+
+          <div id="voiceSection">
+            <div class="voice-box">
+              <div class="voice-icon">🎙</div>
+              <div class="voice-text">
+                <h3>Record Voice Command</h3>
+                <p>Speak naturally. Example: Send an email to Rahul saying I will attend the meeting tomorrow.</p>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button id="recordBtn" class="primary-btn" type="button">Start Recording</button>
+              <button id="stopBtn" class="secondary-btn" type="button" disabled>Stop Recording</button>
+            </div>
+          </div>
+
+          <div id="textSection" class="hidden">
+            <label class="label" for="textPrompt">Type your instruction</label>
+            <textarea
+              id="textPrompt"
+              rows="6"
+              placeholder="Example: Send an email to aashigarg825@gmail.com saying I will attend the meeting tomorrow at 10 AM."
+            ></textarea>
+
+            <div class="action-row">
+              <button id="processTextBtn" class="primary-btn" type="button">Process Text</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head draft-head">
+            <div>
+              <h2>Transcript</h2>
+              <p>Generated transcript or typed instruction</p>
+            </div>
+            <button id="generateBtn" class="accent-btn" type="button">Generate Draft</button>
+          </div>
+
+          <textarea
+            id="transcript"
+            rows="7"
+            placeholder="Transcript will appear here..."
+          ></textarea>
+        </div>
+
+        <div class="panel full-width">
+          <div class="panel-head">
+            <h2>Email Draft</h2>
+            <p>Review and edit before sending</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="label" for="to">Recipient Email</label>
+              <input type="email" id="to" placeholder="Recipient Email" />
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="Subject" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label" for="body">Email Body</label>
+            <textarea id="body" rows="10" placeholder="Email body"></textarea>
+          </div>
+
+          <div class="footer-row">
+            <button id="sendBtn" class="send-btn" type="button">Send Email</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="statusBox" class="status-box">Ready</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

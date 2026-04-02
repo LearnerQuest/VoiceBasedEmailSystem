@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env files
+.env
+
+# Uploaded/temp files
+temp_uploads/
+Backend/temp_uploads/
+
+# OS/editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+client_secret*.json
+credentials.json
+
+# Logs
+*.log
